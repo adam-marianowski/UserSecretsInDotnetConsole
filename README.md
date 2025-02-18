@@ -44,31 +44,15 @@ this allows editing secrets directly in `secrets.json`. When running or building
 All secrets with values can be listed with the following command:
 
 ```sh
-user-secrets list
+dotnet user-secrets list
 ```
 
 and secret can be set via:
 
 ```sh
-user-secrets set "<secret_name>" "<secret_value>"
+dotnet user-secrets set "<secret_name>" "<secret_value>"
 ```
 
-## multi-level secret path
+## Additional documentation
 
-Having JSON secrets as following:
-
-```json
-{
-  "connectionStrings": {
-    "string1": "string1",
-    "string2": "string2"
-  }
-}
-```
-
-C# code will need to reference using `:`:
-
-```cs
-var connectionString = configuration["connectionStrings:string1"];
-Console.WriteLine($"Connection String: {connectionString}");
-```
+[Microsoft Learn Documentation - app-secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-9.0&tabs=windows)

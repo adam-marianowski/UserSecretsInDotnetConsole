@@ -6,7 +6,6 @@ var host = Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostContex
     config
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddUserSecrets<Program>(optional: true, reloadOnChange: true);
-
 }).Build();
 
 var configuration = host.Services.GetRequiredService<IConfiguration>();
